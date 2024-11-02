@@ -1,25 +1,28 @@
-const submitIncome = document.getElementById("submit-income");
+const submitIncome = document.getElementById("submit");
 submitIncome.addEventListener("click", () =>
-  createTransaction("income", "source")
+  createTransaction("type", "date", "amount","notes")
 );
 
-const submitExpance = document.getElementById("submit-expance");
-submitExpance.addEventListener("click", () =>
-  createTransaction("expance", "notes")
-);
 
-function createTransaction(type, message) {
+
+function createTransaction(type, date, amount,notes) {
   let oldTransactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
   console.log(oldTransactions);
 
-  const typeOfTransaction = document.getElementById(type).value;
-  const messageOnTransaction = document.getElementById(message).value;
-  console.log(typeOfTransaction);
+
+  const amountOfTransaction = document.getElementById(amount).value;
+  const dateOfTransaction = document.getElementById(date).value;
+  const noteOnTransaction = document.getElementById(notes).value;
+  const typeOfTransaction = document.getElementById(type).value; //source or note
+
+
 
   let transaction = {
     type: typeOfTransaction,
-    message: messageOnTransaction,
+    amount: amountOfTransaction,
+    date:dateOfTransaction,
+    notes: noteOnTransaction,
   };
   oldTransactions.push(transaction);
 

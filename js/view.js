@@ -3,15 +3,19 @@ viewAll.addEventListener("click", viewAllTransactions);
 
 function viewAllTransactions() {
   let transactions = JSON.parse(localStorage.getItem("transactionsArray"));
-  let allTransactions=" ";
+  let allTransactions = " ";
   for (let i in transactions) {
-    console.log(transactions[i]);
     allTransactions += `<div class="transaction">
     <div class="type">${transactions[i].type}</div>
-    <div class="messaage">${transactions[i].message}</div>
+    <div class="amount">${transactions[i].amount}</div>
+    <div class="date">${transactions[i].date}</div>
+    <div class="notes">${transactions[i].notes}</div>
+
   </div>`;
   }
-  document.getElementById("view-all-transactions").innerHTML = allTransactions;
+  appendHTML("view-all-transactions", allTransactions);
 }
 
-function
+function appendHTML(div, html) {
+  document.getElementById(div).innerHTML = html;
+}
