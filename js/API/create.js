@@ -7,7 +7,7 @@ function createTransaction(type, date, amount, notes) {
   let dateOfTransaction = document.getElementById(date).value;
   let noteOnTransaction = document.getElementById(notes).value;
   let typeOfTransaction = document.getElementById(type).value;
-
+  // console.log(typeOfTransaction);
   let transaction = {
     type: typeOfTransaction,
     amount: amountOfTransaction,

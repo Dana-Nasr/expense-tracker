@@ -4,26 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link href="./styles.css" rel="stylesheet" /> 
   </head>
   <body>
     <input type="text" id="type" placeholder="type" required />
-    <input type="text" id="amount" placeholder="amount" required />
+    <input type="number" id="amount" placeholder="amount" required />
     <input type="text" id="notes" placeholder="notes" required />
     <input type="date" id="date" placeholder="date" required />
     <button id="submit">enter</button>
 
-    <button id="view-all">view all</button>
-    <button id="view-income">view income</button>
-    <button id="view-expance">view expance</button>
-
     <button id="budget">budget</button>
 
+    <button id="view-all">view all</button>
+
+    <button id="view-income">view income</button>
+
+    <button id="view-expance">view expance</button>
+
+    <input type="number" id="priceFilter" placeholder="Price" />
     <button id="less-than">less than</button>
     <button id="greater-than">greater than</button>
 
+    <input type="date" id="dateFilter" placeholder="Date" />
     <button id="greater-than-Date">greater than date</button>
     <button id="less-than-Date">less than date</button>
 
+    <input type="text" id="noteFilter" placeholder="Notes" />
     <button id="word-find">find word</button>
 
     <div id="transactions"></div>

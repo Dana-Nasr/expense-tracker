@@ -14,12 +14,11 @@ function editTransaction(editIndex, type1, type2) {
 
   appendHTML("edit", edit);
   const saveButtons = document.getElementById("save");
-  saveButtons.addEventListener("click", () =>
-    save(editIndex, type1, type2, transactions)
-  );
+  saveButtons.addEventListener("click", () => save(editIndex, transactions));
 }
 
-function save(editIndex, type1, type2, transactions) {
+function save(editIndex, transactions) {
+  
   const type =
     document.getElementById("type").value || transactions[editIndex].type;
   const amount =
