@@ -20,6 +20,8 @@ function createTransaction(type, date, amount, notes) {
   document.getElementById("amount").value = "";
   document.getElementById("notes").value = "";
   document.getElementById("date").value = "";
-  
+
   localStorage.setItem("transactionsArray", JSON.stringify(oldTransactions));
+
+  calculateTotalBuget();
 }
