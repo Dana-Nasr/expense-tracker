@@ -25,7 +25,7 @@ div {
 .transactionContainer {
   margin: 5px;
   margin-top: 20px;
-  background: white;
+
   border-radius: 5px;
 
   padding: 20px;
@@ -59,12 +59,31 @@ table tr:hover {
   background-color: #ddd;
 }
 
-
 #budget {
   margin-top: 20px;
-  background-color: #ffc107; 
+  background-color: #ffc107;
 }
 
 #budget:hover {
-  background-color: #e0a800; 
+  background-color: #e0a800;
+}
+
+table td:nth-child(5) > button {
+  background-color: rgb(210, 9, 9);
+  width: 80%;
+}
+table td:nth-child(6) > button {
+  width: 80%;
+}
+.budgetDiv {
+  justify-content: center;
+  margin-top: 20px;
+  font-size: 18px;
+}
+.edit > input {
+  width: 18%;
+  border: 2px solid black;
+}
+.edit > button {
+  width: 18%;
 }

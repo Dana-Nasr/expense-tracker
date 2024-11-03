@@ -1,9 +1,27 @@
 function viewTransactions(transactions) {
   const transactionsTable = document.getElementById("transactions");
-  transactionsTable.innerHTML = " ";
+  transactionsTable.innerHTML = ""; // Clear previous content
+
+  // Create the table and set its id
   const table = document.createElement("table");
   table.setAttribute("id", "table");
+
+  // Create and append the table header
+  const thead = document.createElement("thead");
+  const headerRow = document.createElement("tr");
+
+  // Define headers and append them to the header row
+  const headers = ["Type", "Amount", "Date", "Notes", "Delete", "Edit "];
+  headers.forEach((headerText) => {
+    const th = document.createElement("th");
+    th.textContent = headerText;
+    headerRow.appendChild(th);
+  });
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+
   transactionsTable.appendChild(table);
+
   for (let i in transactions) {
     const row = document.createElement("tr");
     row.className = "transaction";
@@ -32,17 +50,17 @@ function viewTransactions(transactions) {
     const deleteButton = document.createElement("button");
     deleteButton.className = "delete";
     deleteButton.value = i;
-    deleteButton.textContent = "delete";
+    deleteButton.textContent = "Delete";
     deleteCell.appendChild(deleteButton);
     row.appendChild(deleteCell);
 
-    const edit = document.createElement("td");
+    const editCell = document.createElement("td");
     const editButton = document.createElement("button");
     editButton.className = "edit";
     editButton.value = i;
-    editButton.textContent = "edit";
-    edit.appendChild(editButton);
-    row.appendChild(edit);
+    editButton.textContent = "Edit";
+    editCell.appendChild(editButton);
+    row.appendChild(editCell);
 
     table.appendChild(row);
   }

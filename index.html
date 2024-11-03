@@ -13,7 +13,7 @@
     <header class="bk-primary flex center">
       <h2>WELCOME TO OUR EXPANSE TRACKER</h2>
     </header>
-    <div id="budgetDiv" class="flex row center"></div>
+    <div id="budgetDiv" class="flex row space-around budgetDiv"></div>
     <div class="flex column wrap space-around">
       <div class="flex row grow1 transactionContainer wrap">
         <div class="flex transaction column center bk-primary grow1 enter">
@@ -31,11 +31,11 @@
 
             <button id="view-income">view income</button>
 
-            <button id="view-expance">view expance</button>
+            <button id="view-expance">view expanse</button>
           </div>
           <div class="flex row space-between view">
-            <input type="number" id="priceFilter" placeholder="Price" />
-            <button id="less-than">Greater than entered price</button>
+            <input type="number" id="priceFilter" placeholder="enter price" />
+            <button id="less-than">More than entered price</button>
             <button id="greater-than">Less than entered price</button>
           </div>
           <div class="flex row space-between view">
@@ -47,7 +47,7 @@
             <input
               type="text"
               id="noteFilter"
-              placeholder="Notes"
+              placeholder="enter search keyword"
               class="grow1"
             />
             <button id="word-find" class="grow4">Find word</button>
@@ -55,10 +55,10 @@
           <button id="budget">budget</button>
         </div>
       </div>
-      <div id="transactions" class="grow5 transactions"></div>
+      <div id="transactions" class="transactions"></div>
     </div>
 
-    <div id="edit"></div>
+    <div id="edit" class="edit"></div>
 
     <script src="./js/app.js"></script>
     <script src="./js/API/view.js"></script>

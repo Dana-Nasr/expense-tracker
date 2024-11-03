@@ -48,7 +48,7 @@ function addGreaterAmountFilter(amount) {
     if (td) {
       value = td.textContent;
       console.log(value);
-      if (parseInt(value) < parseInt(amount)) {
+      if (parseInt(value) > parseInt(amount)) {
         tr[i].style.display = "none";
       }
     }
@@ -63,7 +63,7 @@ function addLessAmountFilter(amount) {
     if (td) {
       value = td.textContent;
       console.log(value);
-      if (parseInt(value) > parseInt(amount)) {
+      if (parseInt(value) < parseInt(amount)) {
         tr[i].style.display = "none";
       }
     }

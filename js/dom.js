@@ -18,7 +18,7 @@ viewIncome.addEventListener("click", () => {
 const viewExpence = document.getElementById("view-expance");
 viewExpence.addEventListener("click", () => {
   transactions = parse();
-  addTypeFilter("expance");
+  addTypeFilter("expanse");
 });
 
 const lessThan = document.getElementById("less-than");
