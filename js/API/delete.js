@@ -5,5 +5,6 @@ function deleteTransaction(removeIndex, type1, type2) {
 
   localStorage.setItem("transactionsArray", JSON.stringify(transactions));
 
-  viewTransactions(type1, type2);
+  viewTransactions(parse());
+  calculateTotalBuget();
 }

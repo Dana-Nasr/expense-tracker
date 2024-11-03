@@ -1,5 +1,3 @@
-let transaction = " ";
-
 const submitIncome = document.getElementById("submit");
 submitIncome.addEventListener("click", () =>
   createTransaction("type", "date", "amount", "notes")
@@ -49,8 +47,4 @@ function appendHTML(div, html) {
   document.getElementById(div).innerHTML = html;
 }
 
-function parse() {
-  let transactions =
-    JSON.parse(localStorage.getItem("transactionsArray")) || [];
-  return transactions;
-}
+

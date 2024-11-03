@@ -6,9 +6,9 @@ function editTransaction(editIndex, type1, type2) {
   let edit = " ";
   edit += `<tr class="edittransaction">
   <td class="type"><input id="Ntype" type="text"  value="${toBEdited.type}" placeholder="Type"/></td>
-  <td class="amount"><input id="Namount" type="text"  value="${toBEdited.amount}" placeholder="Type"/></td>
-  <td class="notes"><input id="Nnotes" type="text"  value="${toBEdited.notes}" placeholder="Type"/></td>
-   <td class="date"><input id ="Ndate" type="date" value="${toBEdited.date}" placeholder="Type"/></td>
+  <td class="amount"><input id="Namount" type="text"  value="${toBEdited.amount}" placeholder="Amount"/></td>
+  <td class="notes"><input id="Nnotes" type="text"  value="${toBEdited.notes}" placeholder="Notes"/></td>
+   <td class="date"><input id ="Ndate" type="date" value="${toBEdited.date}" placeholder="Date"/></td>
   <td><button id="save" value=${editIndex}> save</button></td>
 </tr>`;
 
@@ -38,6 +38,7 @@ function save(editIndex, type1, type2, transactions) {
   console.log("HELLO");
 
   localStorage.setItem("transactionsArray", JSON.stringify(transactions));
-  viewTransactions(type1, type2);
+
   document.getElementById("edit").innerHTML = "";
+  viewTransactions(parse());
 }
