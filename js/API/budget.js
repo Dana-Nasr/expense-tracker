@@ -20,7 +20,7 @@ function calculateTotalBuget() {
 }
 
 function displayBudget(income,expanse) {
-  let budget = income - xpense;
+  let budget = income - expanse ;
   const budgetDisplay = document.getElementById("budgetDiv");
   budgetDisplay.innerHTML = "";
 
@@ -36,4 +36,3 @@ function displayBudget(income,expanse) {
   expenseElement.textContent = `Expanse: ${expanse}`;
   budgetDisplay.appendChild(expenseElement);
 }
-e

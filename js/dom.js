@@ -12,6 +12,7 @@ viewAll.addEventListener("click", () => {
 const viewIncome = document.getElementById("view-income");
 viewIncome.addEventListener("click", () => {
   transactions = parse();
+
   addTypeFilter("income");
 });
 

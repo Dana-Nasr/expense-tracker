@@ -8,13 +8,20 @@ function createTransaction(type, date, amount, notes) {
   let noteOnTransaction = document.getElementById(notes).value;
   let typeOfTransaction = document.getElementById(type).value;
   // console.log(typeOfTransaction);
-  let transaction = {
-    type: typeOfTransaction,
-    amount: amountOfTransaction,
-    date: dateOfTransaction,
-    notes: noteOnTransaction,
-  };
-  oldTransactions.push(transaction);
+  if (
+    amountOfTransaction.trim() !== "" &&
+    dateOfTransaction.trim() !== "" &&
+    noteOnTransaction.trim() !== "" &&
+    typeOfTransaction.trim() !== ""
+  ) {
+    let transaction = {
+      type: typeOfTransaction,
+      amount: amountOfTransaction,
+      date: dateOfTransaction,
+      notes: noteOnTransaction,
+    };
+    oldTransactions.push(transaction);
+  }
 
   document.getElementById("type").value = "";
   document.getElementById("amount").value = "";
