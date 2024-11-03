@@ -13,9 +13,11 @@
     <header class="bk-primary flex center">
       <h2>WELCOME TO OUR EXPANSE TRACKER</h2>
     </header>
-    <div class="flex row wrap space-around">
-      <div class="flex column grow1 transactionContainer">
-        <div class="flex transaction column center bk-primary grow1">
+    <div id="budgetDiv" class="flex row center"></div>
+    <div class="flex column wrap space-around">
+      <div class="flex row grow1 transactionContainer wrap">
+        <div class="flex transaction column center bk-primary grow1 enter">
+          <h2>Add Transaction:</h2>
           <input type="text" id="type" placeholder="type" required />
           <input type="number" id="amount" placeholder="amount" required />
           <input type="text" id="notes" placeholder="notes" required />
@@ -23,8 +25,9 @@
           <button id="submit">enter</button>
         </div>
         <div class="flex transaction column center bk-primary grow1">
+          <h2>Add Filters:</h2>
           <div class="flex row space-between view">
-            <button id="view-all">view all</button>
+            <button id="view-all">Reset or view all</button>
 
             <button id="view-income">view income</button>
 
@@ -32,17 +35,22 @@
           </div>
           <div class="flex row space-between view">
             <input type="number" id="priceFilter" placeholder="Price" />
-            <button id="less-than">less than</button>
-            <button id="greater-than">greater than</button>
+            <button id="less-than">Greater than entered price</button>
+            <button id="greater-than">Less than entered price</button>
           </div>
           <div class="flex row space-between view">
             <input type="date" id="dateFilter" placeholder="Date" />
-            <button id="greater-than-Date">greater than date</button>
-            <button id="less-than-Date">less than date</button>
+            <button id="greater-than-Date">After selected date</button>
+            <button id="less-than-Date">Before selected date</button>
           </div>
           <div class="flex row space-between view">
-            <input type="text" id="noteFilter" placeholder="Notes" />
-            <button id="word-find">find word</button>
+            <input
+              type="text"
+              id="noteFilter"
+              placeholder="Notes"
+              class="grow1"
+            />
+            <button id="word-find" class="grow4">Find word</button>
           </div>
           <button id="budget">budget</button>
         </div>
@@ -50,7 +58,6 @@
       <div id="transactions" class="grow5 transactions"></div>
     </div>
 
-    <div id="budgetDiv"></div>
     <div id="edit"></div>
 
     <script src="./js/app.js"></script>

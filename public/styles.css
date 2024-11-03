@@ -4,15 +4,22 @@ header {
 }
 .transaction {
   margin-top: 10px;
-  gap: 20px;
   padding: 20px;
   margin: 20px;
 }
 .view {
   width: 100%;
 }
+.enter > input {
+  width: 50%;
+  padding: 9px;
+  margin: 9px;
+}
 /* General styles */
-
+div {
+  padding: 0px;
+  padding: 0px;
+}
 .transactions,
 .transaction,
 .transactionContainer {
@@ -52,12 +59,12 @@ table tr:hover {
   background-color: #ddd;
 }
 
-/* Budget button styles */
+
 #budget {
   margin-top: 20px;
-  background-color: #ffc107; /* Yellow color for budget button */
+  background-color: #ffc107; 
 }
 
 #budget:hover {
-  background-color: #e0a800; /* Darker yellow on hover */
+  background-color: #e0a800; 
 }
