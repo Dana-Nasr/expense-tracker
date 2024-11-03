@@ -1,15 +1,21 @@
 const viewAll = document.getElementById("view-all");
-viewAll.addEventListener("click", viewAllTransactions);
+viewAll.addEventListener("click", () => viewTransactions("income", "expance"));
 
 const viewIncome = document.getElementById("view-income");
-viewIncome.addEventListener("click", viewIncomeTransactions);
+viewIncome.addEventListener("click", () => viewTransactions("income", " "));
 
-let transactions = JSON.parse(localStorage.getItem("transactionsArray"));
+const viewExpence = document.getElementById("view-expance");
+viewExpence.addEventListener("click", () => viewTransactions("expance", " "));
 
-function viewAllTransactions() {
-  let allTransactions = " ";
+
+
+function viewTransactions(type1, type2) {
+  let transactions = JSON.parse(localStorage.getItem("transactionsArray"));
+  let Transactions = " ";
+  
   for (let i in transactions) {
-    allTransactions += `<tr class="transaction">
+    if (transactions[i].type == type1 || transactions[i].type == type2)
+      Transactions += `<tr class="transaction">
     <td class="type">${transactions[i].type}</td>
     <td class="amount">${transactions[i].amount}</td>
     <td class="date">${transactions[i].date}</td>
@@ -17,22 +23,7 @@ function viewAllTransactions() {
 
   </tr>`;
   }
-  appendHTML("view-all-transactions", allTransactions);
-}
-
-function viewIncomeTransactions() {
-  let incomeTransactions = " ";
-  for (let i in transactions) {
-    if ((transactions[i].type == "income")) {
-      incomeTransactions += `<tr class="transaction">
-    <td class="amount">${transactions[i].amount}</td>
-    <td class="date">${transactions[i].date}</td>
-    <td class="notes">${transactions[i].notes}</td>
-
-  </tr>`;
-    }
-  }
-  appendHTML("view-income-transactions", incomeTransactions);
+  appendHTML("transactions", Transactions);
 }
 
 function appendHTML(div, html) {
