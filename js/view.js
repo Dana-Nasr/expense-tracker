@@ -1,19 +1,38 @@
 const viewAll = document.getElementById("view-all");
 viewAll.addEventListener("click", viewAllTransactions);
 
+const viewIncome = document.getElementById("view-income");
+viewIncome.addEventListener("click", viewIncomeTransactions);
+
+let transactions = JSON.parse(localStorage.getItem("transactionsArray"));
+
 function viewAllTransactions() {
-  let transactions = JSON.parse(localStorage.getItem("transactionsArray"));
   let allTransactions = " ";
   for (let i in transactions) {
-    allTransactions += `<div class="transaction">
-    <div class="type">${transactions[i].type}</div>
-    <div class="amount">${transactions[i].amount}</div>
-    <div class="date">${transactions[i].date}</div>
-    <div class="notes">${transactions[i].notes}</div>
+    allTransactions += `<tr class="transaction">
+    <td class="type">${transactions[i].type}</td>
+    <td class="amount">${transactions[i].amount}</td>
+    <td class="date">${transactions[i].date}</td>
+    <td class="notes">${transactions[i].notes}</td>
 
-  </div>`;
+  </tr>`;
   }
   appendHTML("view-all-transactions", allTransactions);
+}
+
+function viewIncomeTransactions() {
+  let incomeTransactions = " ";
+  for (let i in transactions) {
+    if ((transactions[i].type == "income")) {
+      incomeTransactions += `<tr class="transaction">
+    <td class="amount">${transactions[i].amount}</td>
+    <td class="date">${transactions[i].date}</td>
+    <td class="notes">${transactions[i].notes}</td>
+
+  </tr>`;
+    }
+  }
+  appendHTML("view-income-transactions", incomeTransactions);
 }
 
 function appendHTML(div, html) {
