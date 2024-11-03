@@ -1,6 +1,7 @@
 function editTransaction(editIndex, type1, type2) {
   let transactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
+
   let toBEdited = transactions[editIndex];
   let edit = " ";
   edit += `<tr class="edittransaction">
@@ -34,8 +35,7 @@ function save(editIndex, type1, type2, transactions) {
     date: date,
     notes: notes,
   };
-  console.log("kk");
-  transactions.push(transactions[editIndex]);
+  console.log("HELLO");
 
   localStorage.setItem("transactionsArray", JSON.stringify(transactions));
   viewTransactions(type1, type2);

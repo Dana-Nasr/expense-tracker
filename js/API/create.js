@@ -1,8 +1,3 @@
-const submitIncome = document.getElementById("submit");
-submitIncome.addEventListener("click", () =>
-  createTransaction("type", "date", "amount","notes")
-);
-
 
 function createTransaction(type, date, amount,notes) {
   let oldTransactions =
