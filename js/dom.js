@@ -1,5 +1,4 @@
-let type1 = "income";
-let type2 = "expance";
+let transaction = " ";
 
 const submitIncome = document.getElementById("submit");
 submitIncome.addEventListener("click", () =>
@@ -9,32 +8,27 @@ submitIncome.addEventListener("click", () =>
 const viewAll = document.getElementById("view-all");
 viewAll.addEventListener("click", () => {
   transactions = parse();
-  type1 = "income";
-  type2 = "expance";
-  viewTransactions(type1, type2, transactions);
+  viewTransactions(transactions);
 });
 
 const viewIncome = document.getElementById("view-income");
 viewIncome.addEventListener("click", () => {
   transactions = parse();
-  type1 = "income";
-  type2 = " ";
-  viewTransactions(type1, type2, transactions);
+  addTypeFilter("income");
 });
 
 const viewExpence = document.getElementById("view-expance");
 viewExpence.addEventListener("click", () => {
   transactions = parse();
-  type1 = "";
-  type2 = "expance";
-  viewTransactions(type1, type2, transactions);
+
+  viewTransactions(transactions);
 });
 
 const lessThan = document.getElementById("less-than");
-lessThan.addEventListener("click", () => getLessThan(20, type1, type2));
+lessThan.addEventListener("click", () => addLessAmountFilter(20));
 
 const greaterThan = document.getElementById("greater-than");
-greaterThan.addEventListener("click", () => getGreaterThan(20, type1, type2));
+greaterThan.addEventListener("click", () => addGreaterAmountFilter(20));
 
 const budget = document.getElementById("budget");
 budget.addEventListener("click", calculateTotalBuget);
