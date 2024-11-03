@@ -39,3 +39,37 @@ function addTypeFilter(type) {
   }
 }
 
+
+function addGreaterAmountFilter(amount) {
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+
+    if (td) {
+      value = td.textContent;
+      console.log(value);
+      if (parseInt(value) < amount) {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function addLessAmountFilter(amount) {
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+
+    if (td) {
+      value = td.textContent;
+      console.log(value);
+      if (parseInt(value) > amount) {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function addDateFillter(){
+  
+}
