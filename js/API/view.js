@@ -1,9 +1,5 @@
-
-function viewTransactions(type1, type2) {
-  let transactions =
-    JSON.parse(localStorage.getItem("transactionsArray")) || [];
+function viewTransactions(type1, type2, transactions) {
   let Transactions = "";
-
   for (let i in transactions) {
     if (transactions[i].type == type1 || transactions[i].type == type2) {
       Transactions += `<tr class="transaction">
@@ -34,4 +30,3 @@ function viewTransactions(type1, type2) {
     );
   });
 }
-
