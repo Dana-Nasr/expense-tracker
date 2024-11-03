@@ -17,5 +17,6 @@ function calculateTotalBuget() {
   }
 
   budget = income - expance;
-
+  totalBudget = `<div><p>${budget}</p></div>`;
+  appendHTML("budgetDiv", totalBudget);
 }
