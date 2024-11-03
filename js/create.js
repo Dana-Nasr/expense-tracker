@@ -4,7 +4,6 @@ submitIncome.addEventListener("click", () =>
 );
 
 
-
 function createTransaction(type, date, amount,notes) {
   let oldTransactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
