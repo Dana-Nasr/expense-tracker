@@ -10,7 +10,6 @@ viewIncome.addEventListener("click", () => viewTransactions("income", " "));
 
 const viewExpence = document.getElementById("view-expance");
 viewExpence.addEventListener("click", () => viewTransactions("expance", " "));
-
 function appendHTML(div, html) {
   document.getElementById(div).innerHTML = html;
 }

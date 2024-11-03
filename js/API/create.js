@@ -1,24 +1,25 @@
-
-function createTransaction(type, date, amount,notes) {
+function createTransaction(type, date, amount, notes) {
   let oldTransactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
   console.log(oldTransactions);
 
-
-  const amountOfTransaction = document.getElementById(amount).value;
-  const dateOfTransaction = document.getElementById(date).value;
-  const noteOnTransaction = document.getElementById(notes).value;
-  const typeOfTransaction = document.getElementById(type).value; //source or note
-
-
+  let amountOfTransaction = document.getElementById(amount).value;
+  let dateOfTransaction = document.getElementById(date).value;
+  let noteOnTransaction = document.getElementById(notes).value;
+  let typeOfTransaction = document.getElementById(type).value;
 
   let transaction = {
     type: typeOfTransaction,
     amount: amountOfTransaction,
-    date:dateOfTransaction,
+    date: dateOfTransaction,
     notes: noteOnTransaction,
   };
   oldTransactions.push(transaction);
 
+  document.getElementById("type").value = "";
+  document.getElementById("amount").value = "";
+  document.getElementById("notes").value = "";
+  document.getElementById("date").value = "";
+  
   localStorage.setItem("transactionsArray", JSON.stringify(oldTransactions));
 }

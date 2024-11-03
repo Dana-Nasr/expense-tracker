@@ -1,3 +1,4 @@
+
 function viewTransactions(type1, type2) {
   let transactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
@@ -20,14 +21,17 @@ function viewTransactions(type1, type2) {
   const deleteButtons = document.querySelectorAll(".delete");
   deleteButtons.forEach((btn) => {
     const removeIndex = btn.value;
-    btn.addEventListener("click", () => deleteTransaction(removeIndex,type1, type2));
+    btn.addEventListener("click", () =>
+      deleteTransaction(removeIndex, type1, type2)
+    );
   });
 
   const editButtons = document.querySelectorAll(".edit");
   editButtons.forEach((btn) => {
     const editIndex = btn.value;
-    btn.addEventListener("click", () => editTransaction(editIndex,type1, type2));
+    btn.addEventListener("click", () =>
+      editTransaction(editIndex, type1, type2)
+    );
   });
 }
-
 
