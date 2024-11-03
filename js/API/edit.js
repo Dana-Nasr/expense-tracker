@@ -7,8 +7,8 @@ function editTransaction(editIndex, type1, type2) {
   edit += `<tr class="edittransaction">
   <td class="type"><input id="Ntype" type="text"  value="${toBEdited.type}" placeholder="Type"/></td>
   <td class="amount"><input id="Namount" type="text"  value="${toBEdited.amount}" placeholder="Type"/></td>
-  <td class="date"><input id ="Ndate" type="text" value="${toBEdited.date}" placeholder="Type"/></td>
   <td class="notes"><input id="Nnotes" type="text"  value="${toBEdited.notes}" placeholder="Type"/></td>
+   <td class="date"><input id ="Ndate" type="date" value="${toBEdited.date}" placeholder="Type"/></td>
   <td><button id="save" value=${editIndex}> save</button></td>
 </tr>`;
 

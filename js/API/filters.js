@@ -27,7 +27,7 @@
 function addTypeFilter(type) {
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
+  for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];
 
     if (td) {
@@ -39,11 +39,10 @@ function addTypeFilter(type) {
   }
 }
 
-
 function addGreaterAmountFilter(amount) {
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
+  for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
 
     if (td) {
@@ -58,7 +57,7 @@ function addGreaterAmountFilter(amount) {
 function addLessAmountFilter(amount) {
   table = document.getElementById("table");
   tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
+  for (let i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[1];
 
     if (td) {
@@ -70,6 +69,37 @@ function addLessAmountFilter(amount) {
     }
   }
 }
-function addDateFillter(){
-  
+
+
+function addGreaterDateFilter(date) {
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (let i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+
+    if (td) {
+      value = new Date(td.textContent);
+      date = new Date(date);
+      console.log(value);
+      if (value.getTime() < date.getTime()) {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function addLessDateFilter(date) {
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (let i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[2];
+
+    if (td) {
+      value = new Date(td.textContent);
+      date = new Date(date);
+      console.log(value);
+      if (value.getTime() > date.getTime()) {
+        tr[i].style.display = "none";
+      }
+    }
+  }
 }
