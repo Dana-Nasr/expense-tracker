@@ -48,7 +48,7 @@ function addGreaterAmountFilter(amount) {
     if (td) {
       value = td.textContent;
       console.log(value);
-      if (parseInt(value) < amount) {
+      if (parseInt(value) < parseInt(amount)) {
         tr[i].style.display = "none";
       }
     }
@@ -63,13 +63,12 @@ function addLessAmountFilter(amount) {
     if (td) {
       value = td.textContent;
       console.log(value);
-      if (parseInt(value) > amount) {
+      if (parseInt(value) > parseInt(amount)) {
         tr[i].style.display = "none";
       }
     }
   }
 }
-
 
 function addGreaterDateFilter(date) {
   table = document.getElementById("table");
@@ -98,6 +97,21 @@ function addLessDateFilter(date) {
       date = new Date(date);
       console.log(value);
       if (value.getTime() > date.getTime()) {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function addNotesFilter(note) {
+  table = document.getElementById("table");
+  tr = table.getElementsByTagName("tr");
+  for (let i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+
+    if (td) {
+      notes = td.textContent;
+      if (!notes.includes(note)) {
         tr[i].style.display = "none";
       }
     }

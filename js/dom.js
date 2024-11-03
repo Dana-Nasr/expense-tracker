@@ -20,7 +20,7 @@ viewIncome.addEventListener("click", () => {
 const viewExpence = document.getElementById("view-expance");
 viewExpence.addEventListener("click", () => {
   transactions = parse();
-  viewTransactions(transactions);
+  addTypeFilter("expance");
 });
 
 const lessThan = document.getElementById("less-than");
@@ -38,6 +38,9 @@ const lessThanDate = document.getElementById("less-than-Date");
 lessThanDate.addEventListener("click", () =>
   addLessDateFilter("Tue Nov 05 2024 02:00:00 GMT+0200")
 );
+
+const findWord = document.getElementById("word-find");
+findWord.addEventListener("click", () => addNotesFilter("he"));
 
 const budget = document.getElementById("budget");
 budget.addEventListener("click", calculateTotalBuget);
