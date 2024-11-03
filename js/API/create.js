@@ -9,10 +9,11 @@ function createTransaction(type, date, amount, notes) {
   let typeOfTransaction = document.getElementById(type).value;
   // console.log(typeOfTransaction);
   if (
-    amountOfTransaction.trim() !== "" &&
+    amountOfTransaction.trim() !== "" && //only spaces entered
     dateOfTransaction.trim() !== "" &&
     noteOnTransaction.trim() !== "" &&
-    typeOfTransaction.trim() !== ""
+    (typeOfTransaction.trim() === "income" ||
+      typeOfTransaction.trim() === "expense")
   ) {
     let transaction = {
       type: typeOfTransaction,

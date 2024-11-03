@@ -80,10 +80,10 @@ table td:nth-child(6) > button {
   margin-top: 20px;
   font-size: 18px;
 }
-.edit > input {
+.editClass> input {
   width: 18%;
   border: 2px solid black;
 }
-.edit > button {
+.editClass > button {
   width: 18%;
 }

@@ -1,6 +1,6 @@
 function calculateTotalBuget() {
   let budget = 0;
-  let expanse = 0;
+  let expense = 0;
   let income = 0;
   let transactions =
     JSON.parse(localStorage.getItem("transactionsArray")) || [];
@@ -10,17 +10,17 @@ function calculateTotalBuget() {
       console.log(income);
     }
 
-    if (transactions[i].type == "expanse") {
-      expanse += parseInt(transactions[i].amount);
-      console.log(expanse);
+    if (transactions[i].type == "expense") {
+      expense += parseInt(transactions[i].amount);
+      console.log(expense);
     }
   }
 
-  displayBudget(income, expanse);
+  displayBudget(income, expense);
 }
 
-function displayBudget(income,expanse) {
-  let budget = income - expanse ;
+function displayBudget(income,expense) {
+  let budget = income - expense ;
   const budgetDisplay = document.getElementById("budgetDiv");
   budgetDisplay.innerHTML = "";
 
@@ -33,6 +33,6 @@ function displayBudget(income,expanse) {
   budgetDisplay.appendChild(incomeElement);
 
   const expenseElement = document.createElement("div");
-  expenseElement.textContent = `Expanse: ${expanse}`;
+  expenseElement.textContent = `Expanse: ${expense}`;
   budgetDisplay.appendChild(expenseElement);
 }

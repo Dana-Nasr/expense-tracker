@@ -18,7 +18,7 @@
       <div class="flex row grow1 transactionContainer wrap">
         <div class="flex transaction column center bk-primary grow1 enter">
           <h2>Add Transaction:</h2>
-          <input type="text" id="type" placeholder="type" required />
+          <input type="text" id="type" placeholder="income/expense" required />
           <input type="number" id="amount" placeholder="amount" required />
           <input type="text" id="notes" placeholder="notes" required />
           <input type="date" id="date" placeholder="date" required />
@@ -31,7 +31,7 @@
 
             <button id="view-income">view income</button>
 
-            <button id="view-expance">view expanse</button>
+            <button id="view-expense">view expense</button>
           </div>
           <div class="flex row space-between view">
             <input type="number" id="priceFilter" placeholder="enter price" />
@@ -57,8 +57,7 @@
       </div>
       <div id="transactions" class="transactions"></div>
     </div>
-
-    <div id="edit" class="edit"></div>
+    <div id="edit" class="editClass"></div>
 
     <script src="./js/app.js"></script>
     <script src="./js/API/view.js"></script>

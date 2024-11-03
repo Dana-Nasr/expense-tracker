@@ -1,16 +1,13 @@
 function viewTransactions(transactions) {
   const transactionsTable = document.getElementById("transactions");
-  transactionsTable.innerHTML = ""; // Clear previous content
+  transactionsTable.innerHTML = "";
 
-  // Create the table and set its id
   const table = document.createElement("table");
   table.setAttribute("id", "table");
 
-  // Create and append the table header
   const thead = document.createElement("thead");
   const headerRow = document.createElement("tr");
 
-  // Define headers and append them to the header row
   const headers = ["Type", "Amount", "Date", "Notes", "Delete", "Edit "];
   headers.forEach((headerText) => {
     const th = document.createElement("th");
@@ -76,6 +73,7 @@ function viewTransactions(transactions) {
   const editButtons = document.querySelectorAll(".edit");
   editButtons.forEach((btn) => {
     const editIndex = btn.value;
+    console.log(editIndex);
     btn.addEventListener("click", () => editTransaction(editIndex));
   });
 }
