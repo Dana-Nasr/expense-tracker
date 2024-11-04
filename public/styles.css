@@ -59,12 +59,12 @@ table tr:hover {
   background-color: #ddd;
 }
 
-#budget {
+.budget {
   margin-top: 20px;
   background-color: #ffc107;
 }
 
-#budget:hover {
+.budget:hover {
   background-color: #e0a800;
 }
 
@@ -80,7 +80,7 @@ table td:nth-child(6) > button {
   margin-top: 20px;
   font-size: 18px;
 }
-.editClass> input {
+.editClass > input {
   width: 18%;
   border: 2px solid black;
 }

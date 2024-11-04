@@ -19,8 +19,11 @@ function calculateTotalBuget() {
   displayBudget(income, expense);
 }
 
-function displayBudget(income,expense) {
-  let budget = income - expense ;
+function displayBudget(income, expense) {
+  let budget = 0;
+  if (income >= 0 && expense >= 0) {
+    budget = income - expense;
+  }
   const budgetDisplay = document.getElementById("budgetDiv");
   budgetDisplay.innerHTML = "";
 
